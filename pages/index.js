@@ -18,7 +18,7 @@ export default function Home() {
         <section className={cn("bg-red pt-10 pb-16 md:pt-20 md:pb-32", heroStyles.main)}>
           <div className="container">
             <div className="flex flex-col items-center">
-              <Image src="/icons/logo-round.svg" width={200} />
+              <Image src="/icons/logo-round.svg" width={300} height={300} />
               <h1 className="font-display text-2xl md:text-4xl font-medium">Hi, I'm Subhan</h1>
               <div className="mt-6 md:max-w-5xl text-center">
                 <h1 className="font-display text-4xl md:text-7xl font-bold">Building digital products, brands and experiences</h1>
@@ -105,16 +105,16 @@ export default function Home() {
               <div className="w-full">
                 <h2 className="text-2xl font-semibold font-display">Skills</h2>
                 <div className="grid grid-cols-2 gap-6 mt-5">
-                    <p className="font-display text-gray-700">Visual Design</p>
-                    <p className="font-display text-gray-700">UI/UX Design</p>
-                    <p className="font-display text-gray-700">Prototyping</p>
-                    <p className="font-display text-gray-700">Brand Design</p>
-                    <p className="font-display text-gray-700">Front-end Development</p>
-                    <p className="font-display text-gray-700">Back-end Development</p>
-                    <p className="font-display text-gray-700">React</p>
-                    <p className="font-display text-gray-700">NodeJS</p>
-                    <p className="font-display text-gray-700">Express</p>
-                    <p className="font-display text-gray-700">Cypress</p>
+                  <p className="font-display text-gray-700">Visual Design</p>
+                  <p className="font-display text-gray-700">UI/UX Design</p>
+                  <p className="font-display text-gray-700">Prototyping</p>
+                  <p className="font-display text-gray-700">Brand Design</p>
+                  <p className="font-display text-gray-700">Front-end Development</p>
+                  <p className="font-display text-gray-700">Back-end Development</p>
+                  <p className="font-display text-gray-700">React</p>
+                  <p className="font-display text-gray-700">NodeJS</p>
+                  <p className="font-display text-gray-700">Express</p>
+                  <p className="font-display text-gray-700">Cypress</p>
                 </div>
               </div>
               <div className="w-full mt-10 md:mt-0">
