@@ -11,11 +11,13 @@ export default function Navbar() {
                     <div className="flex flex-row items-center">
                         <IconButton iconPath="/icons/email.svg" />
                         <IconButton iconPath="/icons/insta.svg" className="ml-5" />
+                        <IconButton iconPath="/icons/linkedin.svg" className="ml-5" />
+                        <IconButton iconPath="/icons/youtube.svg" className="ml-5" />
                     </div>
                     <div className="flex flex-row items-center">
-                        <a className="transition hover:text-gray-400 text-base text-gray-700 ml-7 font-display font-medium">Work</a>
-                        <a className="transition hover:text-gray-400 text-base text-gray-700 ml-7 font-display font-medium">Resume</a>
-                        <a className="transition hover:text-gray-400 text-base text-gray-700 ml-7 font-display font-medium">Contact</a>
+                        <a href="#work" className="transition hover:text-gray-400 text-base text-gray-700 ml-7 font-display font-medium">Work</a>
+                        <a href="#resume" className="transition hover:text-gray-400 text-base text-gray-700 ml-7 font-display font-medium">Resume</a>
+                        <a href="mailto:contact@subhan.io" className="transition hover:text-gray-400 text-base text-gray-700 ml-7 font-display font-medium">Contact</a>
                     </div>
                 </div>
             </div>
@@ -36,6 +38,8 @@ export default function Navbar() {
                 <div className="flex flex-row pt-5 mt-4 border-t border-gray-200">
                     <IconButton iconPath="/icons/email.svg" />
                     <IconButton iconPath="/icons/insta.svg" className="ml-5" />
+                    <IconButton iconPath="/icons/linkedin.svg" className="ml-5" />
+                    <IconButton iconPath="/icons/youtube.svg" className="ml-5" />
                 </div>
             </div>
         </nav>

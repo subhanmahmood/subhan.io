@@ -1,10 +1,47 @@
+import { useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import heroStyles from '../styles/hero.module.css'
 import cn from 'classnames'
 import Navbar from '../components/navbar'
+import axios from 'axios'
 
 export default function Home() {
+  const [email, setEmail] = useState('')
+  const [error, setError] = useState(true)
+  const [msg, setMsg] = useState('')
+
+  const handleUpdate = (e) => {
+    setEmail(e.target.value)
+  }
+  const handleSubmit = () => {
+    axios.post('/api/email', { email: email })
+      .then(res => {
+        console.log(res)
+        setMsg(res.data.msg)
+        setError(false)
+      })
+      .catch((err) => {
+        if (err.response) {
+          // Request made and server responded
+          console.log(err.response.data);
+          console.log(err.response.status);
+          console.log(err.response.headers);
+          setError(true);
+          setMsg(err.response.data.err)
+        } else if (err.request) {
+          // The request was made but no response was received
+          console.log(err.request);
+          setError(true);
+          setMsg("There was an error on the server")
+        } else {
+          // Something happened in setting up the request that triggered an Error
+          console.log('Error', err.message);
+          setError(true);
+          setMsg("The request could not be made")
+        }
+      })
+  }
   return (
     <div className="min-w-full">
       <Head>
@@ -32,7 +69,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="bg-gray-100 py-16">
+        <section className="bg-gray-100 py-16" id="work">
           <div className="container">
             <div className="flex flex-col items-center px-6">
               <h1 className="font-display text-5xl font-semibold">Work</h1>
@@ -75,7 +112,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="py-14">
+        <section className="py-14" id="resume">
           <div className="container flex flex-col justify-start items-start max-w-6xl px-6">
             <h2 className="text-5xl font-display font-semibold">Resume</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full mt-8">
@@ -158,7 +195,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="py-20 px-6">
+        <section className="py-20 px-6 ">
           <div className="container text-center">
             <h2 className="font-display text-5xl font-semibold">Want to stay up to date?</h2>
             <p className="font-display text-gray-500 max-w-lg mx-auto mt-3">I'll send you occasional emails about what I'm doing, things I find interesting and other helpful things (no spam, I promise)</p>
@@ -166,9 +203,19 @@ export default function Home() {
               <input
                 type="email"
                 className="flex-grow-1 bg-white px-7 py-4 rounded-l-full border border-gray-200 focus:outline-none focus:border-gray-400 w-full md:w-4/12"
-                placeholder="Your email here..." />
-              <button className="flex-shrink-0 px-7 py-4 rounded-r-full bg-black text-white font-display font-semibold">Submit</button>
+                placeholder="Your email here..."
+                value={email}
+                onChange={handleUpdate} />
+              <button
+                onClick={handleSubmit}
+                className="flex-shrink-0 px-7 py-4 rounded-r-full bg-black text-white font-display font-semibold"
+              >
+                Submit
+              </button>
             </div>
+            <small className={`font-display text-${error ? 'red-500' : 'gray-500'} ml-4 mt-1`}>
+              {msg}
+            </small>
           </div>
         </section>
       </main>
