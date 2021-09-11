@@ -2,6 +2,13 @@ import React, { useState } from 'react'
 import IconButton from './IconButton'
 import cn from 'classnames'
 
+const IconButtons = <>
+    <IconButton iconPath="/icons/insta.svg" href="https://www.instagram.com/subhan.mahmoood/" />
+    <IconButton iconPath="/icons/linkedin.svg" href="https://www.linkedin.com/in/subhanmahmood/" className="ml-5" />
+    <IconButton iconPath="/icons/youtube.svg" href="https://www.youtube.com/channel/UCPnZUQsrvCK1qO6F3bH8NTA" className="ml-5" />
+    <IconButton iconPath="/icons/tiktok.svg" href="https://www.tiktok.com/@subhan.mahmood?" className="ml-5" />
+</>
+
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
     return (
@@ -9,10 +16,7 @@ export default function Navbar() {
             <div className="container hidden md:block ">
                 <div className="flex flex-row justify-between py-7">
                     <div className="flex flex-row items-center">
-                        <IconButton iconPath="/icons/email.svg" />
-                        <IconButton iconPath="/icons/insta.svg" className="ml-5" />
-                        <IconButton iconPath="/icons/linkedin.svg" className="ml-5" />
-                        <IconButton iconPath="/icons/youtube.svg" className="ml-5" />
+                        {IconButtons}
                     </div>
                     <div className="flex flex-row items-center">
                         <a href="#work" className="transition hover:text-gray-400 text-base text-gray-700 ml-7 font-display font-medium">Work</a>
@@ -31,15 +35,12 @@ export default function Navbar() {
             </div>
             <div className={cn("transition absolute bg-white w-full md:hidden shadow-lg rounded-lg px-10 pt-4 pb-8", { "hidden": !isOpen })}>
                 <ul>
-                    <li className="py-1 text-gray-800 text-lg font-display">Work</li>
-                    <li className="py-1 text-gray-800 text-lg font-display">Resume</li>
-                    <li className="py-1 text-gray-800 text-lg font-display">Contact</li>
+                <a href="#work" className="transition hover:text-gray-400 text-base text-gray-700 ml-7 font-display font-medium">Work</a>
+                        <a href="#resume" className="transition hover:text-gray-400 text-base text-gray-700 ml-7 font-display font-medium">Resume</a>
+                        <a href="mailto:contact@subhan.io" className="transition hover:text-gray-400 text-base text-gray-700 ml-7 font-display font-medium">Contact</a>
                 </ul>
                 <div className="flex flex-row pt-5 mt-4 border-t border-gray-200">
-                    <IconButton iconPath="/icons/email.svg" />
-                    <IconButton iconPath="/icons/insta.svg" className="ml-5" />
-                    <IconButton iconPath="/icons/linkedin.svg" className="ml-5" />
-                    <IconButton iconPath="/icons/youtube.svg" className="ml-5" />
+                    {IconButtons}
                 </div>
             </div>
         </nav>

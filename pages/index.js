@@ -64,7 +64,11 @@ export default function Home() {
                 <p className="font-display text-center whitespace-normal break-words" style={{ lineHeight: '26px' }}>I'm a CS grad with a passion for all things design, coding and productivity. I have special interest in front-end development and branding.</p>
               </div>
               <div className="flex justify-center mt-6">
-                <button className="transition bg-black rounded-full py-6 px-12 font-semibold font-display text-white shadow-lg hover:shadow-xl hover:scale-110">Get in touch with me</button>
+                <a 
+                  href="mailto:contact@subhan.io"
+                  className="transition bg-black rounded-full py-6 px-12 font-semibold font-display text-white shadow-lg hover:shadow-xl hover:scale-110">
+                    Get in touch with me
+                </a>
               </div>
             </div>
           </div>
@@ -75,7 +79,7 @@ export default function Home() {
               <h1 className="font-display text-5xl font-semibold">Work</h1>
               <p className="max-w-lg text-gray-500 font-display mt-2 text-center">How I've helped brands with their visual identity and online presence in the past</p>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-9 max-w-6xl">
-                <div className="transition bg-white rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-1 p-2 w-full">
+                <a href="https://momo-travel.vercel.app" className="transition bg-white rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-1 p-2 w-full">
                   <div className="flex flex-row">
                     <div className="flex-shrink-0">
                       <img className="h-24 object-cover" src="/icons/travlocracy-mark.svg" />
@@ -85,8 +89,8 @@ export default function Home() {
                       <p className="font-display text-gray-500">Branding + Landing Page</p>
                     </div>
                   </div>
-                </div>
-                <div className="transition bg-white rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-1 p-2 w-full">
+                </a>
+                <a href="https://momo-media.com" className="transition bg-white rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-1 p-2 w-full">
                   <div className="flex flex-row">
                     <div className="flex-shrink-0">
                       <img className="h-24 object-cover" src="/icons/mmg-dark.svg" />
@@ -96,8 +100,8 @@ export default function Home() {
                       <p className="font-display text-gray-500">Branding + Full Website</p>
                     </div>
                   </div>
-                </div>
-                <div className="transition bg-white rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-1 p-2 w-full">
+                </a>
+                <a href="https://enkaeprestigemotors.co.uk" className="transition bg-white rounded-xl shadow-md hover:shadow-lg transform hover:-translate-y-1 p-2 w-full">
                   <div className="flex flex-row">
                     <div className="flex-shrink-0">
                       <img className="h-24 object-cover" src="/icons/enkae.svg" />
@@ -107,7 +111,7 @@ export default function Home() {
                       <p className="font-display text-gray-500">Branding</p>
                     </div>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
           </div>
