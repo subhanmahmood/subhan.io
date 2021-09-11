@@ -7,6 +7,7 @@ const IconButtons = <>
     <IconButton iconPath="/icons/linkedin.svg" href="https://www.linkedin.com/in/subhanmahmood/" className="ml-5" />
     <IconButton iconPath="/icons/youtube.svg" href="https://www.youtube.com/channel/UCPnZUQsrvCK1qO6F3bH8NTA" className="ml-5" />
     <IconButton iconPath="/icons/tiktok.svg" href="https://www.tiktok.com/@subhan.mahmood?" className="ml-5" />
+    <IconButton iconPath="/icons/git.svg" href="https://github.com/subhanmahmood" className="ml-5" />
 </>
 
 export default function Navbar() {
@@ -34,10 +35,10 @@ export default function Navbar() {
                 </div>
             </div>
             <div className={cn("transition absolute bg-white w-full md:hidden shadow-lg rounded-lg px-10 pt-4 pb-8", { "hidden": !isOpen })}>
-                <ul>
-                <a href="#work" className="transition hover:text-gray-400 text-base text-gray-700 ml-7 font-display font-medium">Work</a>
-                        <a href="#resume" className="transition hover:text-gray-400 text-base text-gray-700 ml-7 font-display font-medium">Resume</a>
-                        <a href="mailto:contact@subhan.io" className="transition hover:text-gray-400 text-base text-gray-700 ml-7 font-display font-medium">Contact</a>
+                <ul className="flex flex-col grid gap-2 ml-0">
+                    <a href="#work" className="transition hover:text-gray-400 text-base text-gray-700 font-display font-medium">Work</a>
+                    <a href="#resume" className="transition hover:text-gray-400 text-base text-gray-700 font-display font-medium">Resume</a>
+                    <a href="mailto:contact@subhan.io" className="transition hover:text-gray-400 text-base text-gray-700 font-display font-medium">Contact</a>
                 </ul>
                 <div className="flex flex-row pt-5 mt-4 border-t border-gray-200">
                     {IconButtons}
