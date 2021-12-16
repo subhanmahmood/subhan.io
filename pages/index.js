@@ -5,7 +5,6 @@ import heroStyles from '../styles/hero.module.css'
 import cn from 'classnames'
 import Navbar from '../components/navbar'
 import axios from 'axios'
-import EmailForm from '../components/EmailForm'
 
 export default function Home() {
   const [email, setEmail] = useState('')
@@ -201,7 +200,27 @@ export default function Home() {
           </div>
         </section>
         <section className="py-20 px-6 ">
-          <EmailForm />
+          <div className="container text-center">
+            <h2 className="font-display text-5xl font-semibold">Want to stay up to date?</h2>
+            <p className="font-display text-gray-500 max-w-lg mx-auto mt-3">I'll send you occasional emails about what I'm doing, things I find interesting and other helpful things (no spam, I promise)</p>
+            <div className="flex mt-6 w-full justify-center">
+              <input
+                type="email"
+                className="flex-grow-1 bg-white px-7 py-4 rounded-l-full border border-gray-200 focus:outline-none focus:border-gray-400 w-full md:w-4/12"
+                placeholder="Your email here..."
+                value={email}
+                onChange={handleUpdate} />
+              <button
+                onClick={handleSubmit}
+                className="flex-shrink-0 px-7 py-4 rounded-r-full bg-black text-white font-display font-semibold"
+              >
+                Submit
+              </button>
+            </div>
+            <small className={`font-display text-${error ? 'red-500' : 'gray-500'} ml-4 mt-1`}>
+              {msg}
+            </small>
+          </div>
         </section>
       </main>
     </div>
