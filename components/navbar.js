@@ -40,9 +40,6 @@ export default function Navbar() {
                     <a href="#resume" className="transition hover:text-gray-400 text-base text-gray-700 font-display font-medium">Resume</a>
                     <a href="mailto:contact@subhan.io" className="transition hover:text-gray-400 text-base text-gray-700 font-display font-medium">Contact</a>
                 </ul>
-                <div className="flex flex-row pt-5 mt-4 border-t border-gray-200">
-                    {IconButtons}
-                </div>
             </div>
         </nav>
     )

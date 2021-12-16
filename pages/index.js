@@ -5,6 +5,7 @@ import heroStyles from '../styles/hero.module.css'
 import cn from 'classnames'
 import Navbar from '../components/navbar'
 import axios from 'axios'
+import Footer from '../components/Footer'
 
 export default function Home() {
   const [email, setEmail] = useState('')
@@ -14,34 +15,7 @@ export default function Home() {
   const handleUpdate = (e) => {
     setEmail(e.target.value)
   }
-  const handleSubmit = () => {
-    axios.post('/api/email', { email: email })
-      .then(res => {
-        console.log(res)
-        setMsg(res.data.msg)
-        setError(false)
-      })
-      .catch((err) => {
-        if (err.response) {
-          // Request made and server responded
-          console.log(err.response.data);
-          console.log(err.response.status);
-          console.log(err.response.headers);
-          setError(true);
-          setMsg(err.response.data.err)
-        } else if (err.request) {
-          // The request was made but no response was received
-          console.log(err.request);
-          setError(true);
-          setMsg("There was an error on the server")
-        } else {
-          // Something happened in setting up the request that triggered an Error
-          console.log('Error', err.message);
-          setError(true);
-          setMsg("The request could not be made")
-        }
-      })
-  }
+
   return (
     <div className="min-w-full">
       <Head>
@@ -61,7 +35,7 @@ export default function Home() {
                 <h1 className="font-display text-4xl md:text-7xl font-bold">Building digital products, brands and experiences</h1>
               </div>
               <div className="mt-8 px-4 md:px-0 md:max-w-sm">
-                <p className="font-display text-center whitespace-normal break-words" style={{ lineHeight: '26px' }}>I'm a CS grad with a passion for all things design, coding and productivity. I have special interest in front-end development and branding.</p>
+                <p className="font-display text-center whitespace-normal break-words" style={{ lineHeight: '26px' }}>I'm a front-end developer and designer with a passion for creating great user experiences</p>
               </div>
               <div className="flex justify-center mt-6">
                 <a 
@@ -211,7 +185,6 @@ export default function Home() {
                 value={email}
                 onChange={handleUpdate} />
               <button
-                onClick={handleSubmit}
                 className="flex-shrink-0 px-7 py-4 rounded-r-full bg-black text-white font-display font-semibold"
               >
                 Submit
@@ -223,6 +196,7 @@ export default function Home() {
           </div>
         </section>
       </main>
+      <Footer />  
     </div>
   )
 }
